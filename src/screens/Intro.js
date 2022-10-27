@@ -1,8 +1,17 @@
 import React, {Component} from 'react';
-import {StyleSheet, Text, View} from 'react-native';
-import Profile from './components/Profile';
+import {StyleSheet, Text, TextInput, View} from 'react-native';
+import Profile from '../components/Profile';
 
 class Intro extends Component {
+  constructor() {
+    super();
+    this.state = {
+      data: 'text',
+    };
+  }
+  change(x) {
+    this.setState({data: x * 10});
+  }
   render() {
     return (
       <View style={styles.container}>
@@ -10,7 +19,18 @@ class Intro extends Component {
         <Text style={styles.instructions}>
           This is a React Native snapshot test.
         </Text>
-        <Profile />
+        <Profile data={'Testing.....'} />
+        <TextInput
+          testID="username"
+          placeholder="Enter user name"
+          onChangeText={text => this.change(text)}
+        />
+        <TextInput
+          testID="password"
+          placeholder="Enter password"
+          secureTextEntry
+          onChangeText={text => this.change(text)}
+        />
       </View>
     );
   }

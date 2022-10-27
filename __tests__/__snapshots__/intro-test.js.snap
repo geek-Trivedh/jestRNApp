@@ -34,15 +34,20 @@ exports[`renders correctly 1`] = `
     This is a React Native snapshot test.
   </Text>
   <View>
-    <Text
-      style={
-        Object {
-          "fontSize": 20,
-        }
-      }
-    >
-      Profile
+    <Text>
+      Testing.....
     </Text>
   </View>
+  <TextInput
+    onChangeText={[Function]}
+    placeholder="Enter user name"
+    testID="username"
+  />
+  <TextInput
+    onChangeText={[Function]}
+    placeholder="Enter password"
+    secureTextEntry={true}
+    testID="password"
+  />
 </View>
 `;
